@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ASTRO GEARS | Shop</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+  <button id="themeToggle">🌙</button>
+
+  <div class="logo">
+    <img src="photos/logo.png" alt="Astro Gears">
+  </div>
+
+  <nav>
+    <a href="index.html" class="nav-link">HOME</a>
+    <a href="about.html" class="nav-link">ABOUT US</a>
+    <a href="gallery.html" class="nav-link">GALLERY</a>
+    <a href="shop.html" class="nav-link">SHOP</a>
+    <a href="contact.html" class="nav-link">CONTACT US</a>
+    <a href="feedback.html" class="nav-link">FEEDBACK</a>
+  </nav>
+</header>
+
+<section class="astro">
+  <h2>ASTRO GEARS SHOP</h2>
+  <h1>BUY FUTURISTIC STREETWEAR</h1>
+  <p>Click Buy to checkout your order instantly</p>
+</section>
+
+<section class="shop-grid">
+
+  <div class="shop-item">
+    <img src="photos/kj.png">
+    <h3>ASTRO CORE HOODIE</h3>
+    <p>P450</p>
+    <button onclick="openCheckout('ASTRO CORE HOODIE', 450)">Buy Now</button>
+  </div>
+
+  <div class="shop-item">
+    <img src="photos/vs.png">
+    <h3>ASTRO T-SHIRT</h3>
+    <p>P200</p>
+    <button onclick="openCheckout('ASTRO T-SHIRT', 200)">Buy Now</button>
+  </div>
+
+  <div class="shop-item">
+    <img src="photos/Rrzn2.jpg">
+    <h3>ASTRO TECH CAP</h3>
+    <p>P150</p>
+    <button onclick="openCheckout('ASTRO TECH CAP', 150)">Buy Now</button>
+  </div>
+
+</section>
+
+<div id="checkoutModal" class="modal">
+
+  <div class="modal-content">
+
+    <span class="close" onclick="closeCheckout()">&times;</span>
+
+    <h2>Checkout</h2>
+
+    <p id="productName"></p>
+
+    <form>
+
+      <input type="text" placeholder="Full Name" required>
+      <input type="email" placeholder="Email" required>
+      <input type="text" placeholder="Phone Number" required>
+      <input type="text" placeholder="Delivery Address" required>
+
+      <select required>
+        <option value="">Select Payment Method</option>
+        <option>Credit / Debit Card</option>
+        <option>Mobile Money</option>
+        <option>Cash on Delivery</option>
+      </select>
+
+      <button type="submit">Confirm Payment</button>
+
+    </form>
+
+  </div>
+
+</div>
+
+
+<script>
+let selectedProduct = "";
+
+function openCheckout(product, price){
+  selectedProduct = product;
+
+  document.getElementById("productName").innerText =
+    product + " - P" + price;
+
+  document.getElementById("checkoutModal").style.display = "flex";
+}
+
+function closeCheckout(){
+  document.getElementById("checkoutModal").style.display = "none";
+}
+
+window.onclick = function(e){
+  let modal = document.getElementById("checkoutModal");
+  if(e.target === modal){
+    modal.style.display = "none";
+  }
+}
+</script>
+
+<script>
+const toggle = document.getElementById("themeToggle");
+
+if(localStorage.getItem("theme") === "alt"){
+  document.body.classList.add("alt-theme");
+}
+
+toggle.addEventListener("click", () => {
+  document.body.classList.toggle("alt-theme");
+
+  if(document.body.classList.contains("alt-theme")){
+    localStorage.setItem("theme","alt");
+  } else {
+    localStorage.setItem("theme","default");
+  }
+});
+</script>
+
+</body>
+
+<footer class="footer">
+
+  <div class="footer-container">
+
+    <div class="footer-box">
+      <h3>ASTRO GEARS</h3>
+      <p>Wear the future. Digital fashion beyond limits.</p>
+    </div>
+
+    <div class="footer-box">
+      <h3>Quick Links</h3>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="shop.html">Shop</a>
+      <a href="contact.html">Contact</a>
+    </div>
+
+    <div class="footer-box">
+      <h3>Contact</h3>
+      <p>+267 73379522</p>
+      <p>otengbhuka67@gmail.com</p>
+    </div>
+
+    <div class="footer-box">
+      <h3>Follow Us</h3>
+      <a href="https://www.facebook.com/rz.zack.1" target="_blank">Facebook</a>
+      <a href="https://www.tiktok.com/@owteecodes" target="_blank">TikTok</a>
+      <a href="https://wa.me/26773379522" target="_blank">WhatsApp</a>
+    </div>
+
+  </div>
+
+  <p class="copyright">
+    &copy;2026 this website was created by Oteng Bhuka
+  </p>
+
+</footer>
+</html>

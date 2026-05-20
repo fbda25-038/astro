@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ASTRO GEARS - Feedback</title>
+<link rel="stylesheet" href="style.css">
+
+
+</head>
+
+<header>
+    <button id="themeToggle">🌙</button>
+    <div class="logo">
+  <img src="photos/logo.png" alt="Astro gears">
+</div>
+<nav>
+  <a href="index.html" class="nav-link">HOME</a>
+  <a href="about.html" class="nav-link">ABOUT US</a>
+  <a href="gallery.html" class="nav-link">GALLERY</a>
+  <a href="shop.html" class="nav-link">SHOP</a>
+  <a href="contact.html" class="nav-link">CONTACT US</a>
+  <a href="feedback.html" class="nav-link">FEEDBACK</a>
+</nav>
+
+</header>
+<body>
+
+<section class="feedback-section">
+
+  <h2>ASTRO GEARS FEEDBACK</h2>
+  <h1>RATE OUR EXPERIENCE</h1>
+  <p>Tell us how ASTRO GEARS feel in your dimension</p>
+
+  <div class="stars">
+    <span onclick="rate(1)">★</span>
+    <span onclick="rate(2)">★</span>
+    <span onclick="rate(3)">★</span>
+    <span onclick="rate(4)">★</span>
+    <span onclick="rate(5)">★</span>
+  </div>
+
+  <form id="feedbackForm">
+
+    <input type="text" placeholder="Your Name" required>
+
+    <textarea placeholder="Write your feedback..." required></textarea>
+
+    <button type="submit">Submit Feedback</button>
+
+  </form>
+
+</section>
+
+<script>
+let rating = 0;
+
+function rate(value){
+  rating = value;
+  let stars = document.querySelectorAll(".stars span");
+
+  stars.forEach((star, index) => {
+    star.style.color = index < value ? "#00ffff" : "#555";
+  });
+}
+
+document.getElementById("feedbackForm").addEventListener("submit", function(e){
+  e.preventDefault();
+
+  alert("Thanks for your feedback! Rating: " + rating + " ⭐");
+
+  this.reset();
+  rating = 0;
+
+  document.querySelectorAll(".stars span").forEach(s => {
+    s.style.color = "#555";
+  });
+});
+</script>
+
+<script>
+const toggle = document.getElementById("themeToggle");
+
+if(localStorage.getItem("theme") === "alt"){
+  document.body.classList.add("alt-theme");
+}
+
+toggle.addEventListener("click", () => {
+  document.body.classList.toggle("alt-theme");
+
+  if(document.body.classList.contains("alt-theme")){
+    localStorage.setItem("theme","alt");
+  } else {
+    localStorage.setItem("theme","default");
+  }
+});
+</script>
+
+</body>
+
+<footer class="footer">
+
+  <div class="footer-container">
+
+    <div class="footer-box">
+      <h3>ASTRO GEARS</h3>
+      <p>Wear the future. Digital fashion beyond limits.</p>
+    </div>
+
+    <div class="footer-box">
+      <h3>Quick Links</h3>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="shop.html">Shop</a>
+      <a href="contact.html">Contact</a>
+    </div>
+
+    <div class="footer-box">
+      <h3>Contact</h3>
+      <p> +267 73379522</p>
+      <p> otengbhuka67@gmail.com</p>
+    </div>
+
+    <div class="footer-box">
+      <h3>Follow Us</h3>
+      <a href="https://www.facebook.com/rz.zack.1" target="_blank">Facebook</a>
+      <a href="https://www.tiktok.com/@owteecodes" target="_blank">TikTok</a>
+      <a href="https://wa.me/26773379522" target="_blank">WhatsApp</a>
+    </div>
+
+  </div>
+
+  <p class="copyright">
+    &copy;2026 this website was created by Oteng Bhuka
+  </p>
+
+</footer>
+</html>

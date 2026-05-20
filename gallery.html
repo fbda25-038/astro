@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Astro Gears Gallery</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+  <button id="themeToggle">🌙</button>
+
+  <div class="logo">
+    <img src="photos/logo.png" alt="Astro gears">
+  </div>
+
+  <nav>
+    <a href="index.html" class="nav-link">HOME</a>
+    <a href="about.html" class="nav-link">ABOUT US</a>
+    <a href="gallery.html" class="nav-link">GALLERY</a>
+    <a href="shop.html" class="nav-link">SHOP</a>
+    <a href="contact.html" class="nav-link">CONTACT US</a>
+    <a href="feedback.html" class="nav-link">FEEDBACK</a>
+  </nav>
+</header>
+
+<section>
+  <div class="astro">
+    <h2>LOOKBOOK</h2>
+    <h1>DIGITAL FASHION ARCHIVE</h1>
+    <p>
+      A visual collection of Astro Gears futuristic streetwear drops, blending fashion, technology, and identity.
+    </p>
+  </div>
+</section>
+
+
+<section class="cards">
+
+  <div class="card">
+    <h3>CYBER STREET</h3>
+    <p>Urban futuristic wear inspired by neon city aesthetics.</p>
+  </div>
+
+  <div class="card">
+    <h3>SPACE CORE</h3>
+    <p>Interstellar designs influenced by cosmic exploration.</p>
+  </div>
+
+  <div class="card">
+    <h3>DIGITAL ID</h3>
+    <p>Fashion that represents your digital identity in the modern world.</p>
+  </div>
+
+</section>
+
+
+<section class="gallery-container">
+
+  <div class="gallery">
+    <img src="photos/kj.png" alt="ASTRO GEARS ITEM">
+  </div>
+
+  <div class="gallery">
+    <img src="photos/Rrzn2.jpg" alt="ASTRO GEARS ITEM">
+  </div>
+
+  <div class="gallery">
+    <img src="photos/ok.png" alt="ASTRO GEARS ITEM">
+  </div>
+
+  <div class="gallery">
+    <img src="photos/bt.png" alt="ASTRO GEARS ITEM">
+  </div>
+
+  <div class="gallery">
+    <img src="photos/vs.png" alt="ASTRO GEARS ITEM">
+  </div>
+
+  <div class="gallery">
+    <img src="photos/lk.png" alt="ASTRO GEARS ITEM">
+  </div>
+
+</section>
+
+
+<section class="astro">
+  <h2>BEHIND THE DESIGN</h2>
+  <p>
+    Every Astro Gears piece is designed using futuristic concepts inspired by AI, cyberpunk culture, and digital transformation.
+    We focus on creating clothing that reacts visually to modern digital culture.
+  </p>
+</section>
+
+
+<section>
+  <h2>WANT TO WEAR THE FUTURE?</h2>
+  <p>Explore the full collection and upgrade your identity with Astro Gears.</p>
+  <a href="shop.html" class="btn">Go to Shop</a>
+</section>
+
+<script>
+const toggle = document.getElementById("themeToggle");
+
+if(localStorage.getItem("theme") === "alt"){
+  document.body.classList.add("alt-theme");
+}
+
+toggle.addEventListener("click", () => {
+  document.body.classList.toggle("alt-theme");
+
+  if(document.body.classList.contains("alt-theme")){
+    localStorage.setItem("theme","alt");
+  } else {
+    localStorage.setItem("theme","default");
+  }
+});
+</script>
+
+</body>
+
+<footer class="footer">
+
+  <div class="footer-container">
+
+    <div class="footer-box">
+      <h3>ASTRO GEARS</h3>
+      <p>Wear the future. Digital fashion beyond limits.</p>
+    </div>
+
+    <div class="footer-box">
+      <h3>Quick Links</h3>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="shop.html">Shop</a>
+      <a href="contact.html">Contact</a>
+    </div>
+
+    <div class="footer-box">
+      <h3>Contact</h3>
+      <p>+267 73379522</p>
+      <p>otengbhuka67@gmail.com</p>
+    </div>
+
+    <div class="footer-box">
+      <h3>Follow Us</h3>
+      <a href="https://www.facebook.com/rz.zack.1" target="_blank">Facebook</a>
+      <a href="https://www.tiktok.com/@owteecodes" target="_blank">TikTok</a>
+      <a href="https://wa.me/26773379522" target="_blank">WhatsApp</a>
+    </div>
+
+  </div>
+
+  <p class="copyright">
+    &copy;2026 this website was created by Oteng Bhuka
+  </p>
+
+</footer>
+
+</html>

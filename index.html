@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Astro Gears</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<header>
+  <button id="themeToggle">🌙</button>
+
+  <div class="logo">
+    <img src="photos/logo.png" alt="Astro gears">
+  </div>
+
+  <nav>
+    <a href="index.html" class="nav-link">HOME</a>
+    <a href="about.html" class="nav-link">ABOUT US</a>
+    <a href="gallery.html" class="nav-link">GALLERY</a>
+    <a href="shop.html" class="nav-link">SHOP</a>
+    <a href="contact.html" class="nav-link">CONTACT US</a>
+    <a href="feedback.html" class="nav-link">FEEDBACK</a>
+  </nav>
+</header>
+
+<body>
+
+<main>
+
+<section>
+  <div class="astro">
+    <h2>ASTRO GEARS</h2>
+    <h1>WEAR THE FUTURE</h1>
+    <p>
+      Fashion in a new dimension — clothing that moves, reacts, and evolves in digital space.
+      Built for the next generation of style and identity.
+    </p>
+
+    <a href="shop.html" class="btn">Shop Now</a>
+  </div>
+</section>
+
+<section class="astro">
+  <h2>WHO WE ARE</h2>
+  <p>
+    Astro Gears is a futuristic fashion brand merging streetwear, technology, and digital identity.
+    We design clothing that is not just worn — but experienced.
+  </p>
+</section>
+
+<section class="cards">
+
+  <div class="card">
+    <h3>SMART DESIGN</h3>
+    <p>Clothing inspired by AI, cyberpunk aesthetics, and digital evolution.</p>
+  </div>
+
+  <div class="card">
+    <h3>INTERACTIVE STYLE</h3>
+    <p>Outfits designed to react visually through glow, motion, and futuristic patterns.</p>
+  </div>
+
+  <div class="card">
+    <h3>DIGITAL IDENTITY</h3>
+    <p>Your fashion becomes part of your online and real-world identity.</p>
+  </div>
+
+</section>
+
+<section>
+
+  <div class="cards">
+
+    <div class="card">
+      <img src="photos/kj.png" alt="Astro Hoodie" class="card-img">
+      <div class="card-content">
+        <h3>ASTRO CORE HOODIE</h3>
+        <p>Heavy-weight cyber hoodie built for futuristic street dominance.</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="photos/Rrzn2.jpg" alt="Astro Cap" class="card-img">
+      <div class="card-content">
+        <h3>ASTRO CAP</h3>
+        <p>Minimal tech cap with subtle glow accents inspired by space navigation.</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="photos/vs.png" alt="Astro T-shirt" class="card-img">
+      <div class="card-content">
+        <h3>ASTRO T-SHIRT</h3>
+        <p>Streetwear for the unknown dimension of future fashion.</p>
+      </div>
+    </div>
+
+  </div>
+
+</section>
+
+
+<section class="cards">
+
+  <div class="card">
+    <h3>500+</h3>
+    <p>Design Concepts Created</p>
+  </div>
+
+  <div class="card">
+    <h3>1000+</h3>
+    <p>Happy Customers</p>
+  </div>
+
+  <div class="card">
+    <h3>24/7</h3>
+    <p>Future Fashion Innovation</p>
+  </div>
+
+</section>
+
+</main>
+
+<script>
+const toggle = document.getElementById("themeToggle");
+
+if(localStorage.getItem("theme") === "alt"){
+  document.body.classList.add("alt-theme");
+}
+
+toggle.addEventListener("click", () => {
+  document.body.classList.toggle("alt-theme");
+
+  if(document.body.classList.contains("alt-theme")){
+    localStorage.setItem("theme","alt");
+  } else {
+    localStorage.setItem("theme","default");
+  }
+});
+</script>
+
+</body>
+
+<footer class="footer">
+
+  <div class="footer-container">
+
+    <div class="footer-box">
+      <h3>ASTRO GEARS</h3>
+      <p>Wear the future. Digital fashion beyond limits.</p>
+    </div>
+
+    <div class="footer-box">
+      <h3>Quick Links</h3>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="shop.html">Shop</a>
+      <a href="contact.html">Contact</a>
+    </div>
+
+    <div class="footer-box">
+      <h3>Contact</h3>
+      <p>+267 73379522</p>
+      <p>otengbhuka67@gmail.com</p>
+    </div>
+
+    <div class="footer-box">
+      <h3>Follow Us</h3>
+      <a href="https://www.facebook.com/rz.zack.1" target="_blank">Facebook</a>
+      <a href="https://www.tiktok.com/@owteecodes" target="_blank">TikTok</a>
+      <a href="https://wa.me/26773379522" target="_blank">WhatsApp</a>
+    </div>
+
+  </div>
+
+  <p class="copyright">
+    &copy;2026 this website was created by Oteng Bhuka
+  </p>
+
+</footer>
+
+</html>
